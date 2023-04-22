@@ -1,0 +1,28 @@
+
+.fix button{
+    /* color: black; */
+    width:7.9vw ;
+    margin-bottom: 2vh;
+}
+.fix{
+    position: fixed;
+    top:8.7vh;
+    padding: 15px 0;
+    left: 0px;
+    height: 100%;
+    width: 8vw;
+    border-right: 1px solid black;
+    background-color: #158cba;
+    
+}
+
+.accordion .card-header button{
+    border: none !important;
+}
+
+.collapsed{
+    width: 60vw;
+    height: 50px !important;
+    text-align: left;
+    background-color: #f6f6f6;
+}

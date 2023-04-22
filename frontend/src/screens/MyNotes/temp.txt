@@ -1,0 +1,52 @@
+<Accordion key={note._id}>
+                                    {/* <Accordion> */}
+                                        <Card style={{ margin: 10 }}>
+                                            <Card.Header style={{ display: 'flex' }}>
+
+                                                <span style={{
+                                                    color: 'black',
+                                                    textDecoration: 'none',
+                                                    flex: 1,
+                                                    cursor: 'pointer',
+                                                    alignSelf: 'center',
+                                                    fontSize: 8,
+                                                }}>
+
+
+                                                    <Accordion.Header>
+                                                        {note.title}
+                                                    </Accordion.Header>
+
+                                                </span>
+                                                {(note.user === userInfo._id) ?
+                                                    <div>
+                                                        <Button style={{margin:'20px 15px'}} href={`/note/${note._id}`}>Edit</Button>
+                                                        <Button variant='danger' className='mx-2' onClick={() => deleteHandler(note._id)}>Delete</Button>
+                                                    </div>
+                                                    : <div></div>
+                                                }
+                                            </Card.Header>
+                                            {/* <Accordion.Collapse eventKey='0'> */}
+                                            <Accordion.Body>
+                                                <Card.Body>
+                                                    <h4>
+                                                        <Badge bg="success">
+                                                            Category - {note.category}
+                                                        </Badge>
+                                                    </h4>
+                                                    <blockquote className="blockquote mb-0">
+                                                        <p>
+                                                            <td dangerouslySetInnerHTML={{ __html: note.content }} />
+                                                        </p>
+                                                        <footer className="blockquote-footer">
+                                                            Created On - date {note.createdAt.substring(0, 10)}
+                                                        </footer>
+                                                    </blockquote>
+                                                </Card.Body>
+                                            </Accordion.Body>
+
+                                            {/* </Accordion.Collapse> */}
+
+                                        </Card>
+                                    {/* </Accordion> */}
+                                </Accordion>
